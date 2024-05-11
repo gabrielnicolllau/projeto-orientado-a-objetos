@@ -9,3 +9,19 @@ section{
 
 
 }
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.actions {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+

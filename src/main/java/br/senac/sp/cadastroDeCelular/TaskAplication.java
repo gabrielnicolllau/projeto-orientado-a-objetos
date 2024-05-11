@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CadastroDeCelularApplication {
+public class TaskAplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CadastroDeCelularApplication.class, args);
+		SpringApplication.run(TaskAplication.class, args);
 	}
 
 }

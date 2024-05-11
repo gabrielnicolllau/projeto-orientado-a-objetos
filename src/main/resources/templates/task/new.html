@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogos LTDA</title>
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <h1>Jogos Retrôs</h1>
+
+    <form action="/task" method="POST" th:object="${task}">
+        <h2>Novo Jogo</h2>
+        <div class="nes-field">
+            <label for="titulo">Titulo</label>
+            <input type="text" th:field="*{titulo}" class="nes-input">
+            <span class="nes-text is-error" th:errors="*{titulo}">erro</span>
+        </div>
+
+        <div class="nes-field">
+            <label for="description">Descricao</label>
+            <input type="text" th:field="*{descricao}" class="nes-input">
+            <span class="nes-text is-error" th:errors="*{descricao}">Erro na descricao</span>
+        </div>
+
+        <div class="nes-field">
+            <label for="score">Score</label>
+            <input type="number" th:field="*{score}" class="nes-input">
+            <span class="nes-text is-error" th:errors="*{score}">Erro na descricao</span>
+        </div>
+
+        <div class="actions">
+            <a href="/task" class="nes-btn">Cancelar</a>
+            <button type="submit" class="nes-btn is-primary">Salvar</button>
+        </div>
+    </form>
+
+</body>
+
+</html>

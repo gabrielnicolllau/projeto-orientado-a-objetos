@@ -15,8 +15,11 @@
 <body>
     <h1>Epic Task</h1>
 
+    <a href="/task/new" class="nes-btn is-primary" >Nova tarefa</a>
+
     <section>
         <!-- Referencia na variavel tasks: TashController -->
+        <!--Vai se repetir para cada tarefa no banco de dados-->
         <div th:each="task : ${tasks}" class="nes-container with-title is-centered">
             <p class="title" th:text="${task.titulo}"></p>
             <p th:text="${task.descricao}"></p>
@@ -26,6 +29,14 @@
                 <span class="is-primary" th:text="${task.score}"></span>
             </a>
             <progress class="nes-progress is-primary" th:value="${task.status}" value="80" max="100"></progress>
+
+            <form th:action = "${'/task/delete/'+task.id}" method="post">
+            <button class="nes-btn is-error">
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
+
+            </button>
+            </form>
         </div>
     </section>
 
