@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Epic Task</h1>
+
+    <section>
+        <!-- Referencia na variavel game: gameController -->
+        
+        <div th:each="game : ${games}" class="nes-container with-title is-centered">
+            <p class="title" th:text="${game.titulo}"></p>
+            <p th:text="${game.descricao}"></p>
+
+            <a href="#" class="nes-badge is-icon">
+                <span class="is-warning"><i class="nes-icon star is-small"></i></span>
+            </a>
+        </div>
+    </section>
+</body>
+
+</html>
